@@ -1,8 +1,8 @@
 {
-    "scripts": {
-      "build": "sh build.sh"
-    },
-    "devDependencies": {
-      "sponsorkit": "latest"
-    }
+  "scripts": {
+    "build": "sh build.sh"
+  },
+  "devDependencies": {
+    "sponsorkit": "^0.9.3"
   }
+}
