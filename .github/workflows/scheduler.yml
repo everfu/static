@@ -16,7 +16,7 @@ jobs:
       - name: Set node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: lts/*
 
       - run: npx pnpm i
 
@@ -24,7 +24,7 @@ jobs:
         run: npm run build
         env:
           SPONSORKIT_GITHUB_TOKEN: ${{ secrets.SPONSORKIT_GITHUB_TOKEN }}
-          SPONSORKIT_GITHUB_LOGIN: ${{ secrets.SPONSORKIT_GITHUB_LOGIN }}
+          SPONSORKIT_GITHUB_LOGIN: efuo
           SPONSORKIT_AFDIAN_USER_ID: ${{ secrets.SPONSORKIT_AFDIAN_USER_ID }}
           SPONSORKIT_AFDIAN_TOKEN: ${{ secrets.SPONSORKIT_AFDIAN_TOKEN }}
 
