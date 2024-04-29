@@ -2,7 +2,6 @@ import { defineConfig, presets } from 'sponsorkit'
 
 const Solitude_Logo = (width: number, y: number) => `
 <a xlink:href="https://github.com/valor-x" class="sponsorkit-link" target="_blank" id="Solitude">
-<?xml version="1.0" encoding="UTF-8"?>
 <svg width="167px" height="382px" viewBox="0 0 167 382" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>logo</title>
     <defs>
