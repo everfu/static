@@ -62,11 +62,6 @@ export default defineConfig({
     },
     {
       title: 'Backers',
-      monthlyDollars: 3,
-      preset: presets.small,
-      composeAfter: (composer, _tierSponsors, _config) => {
-        composer.addSpan(5)
-      },
     },
     {
       title: 'Sponsors',
