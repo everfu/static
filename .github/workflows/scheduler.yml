@@ -24,7 +24,7 @@ jobs:
         run: npm run build
         env:
           SPONSORKIT_GITHUB_TOKEN: ${{ secrets.SPONSORKIT_GITHUB_TOKEN }}
-          SPONSORKIT_GITHUB_LOGIN: efuo
+          SPONSORKIT_GITHUB_LOGIN: everfu
           SPONSORKIT_AFDIAN_USER_ID: ${{ secrets.SPONSORKIT_AFDIAN_USER_ID }}
           SPONSORKIT_AFDIAN_TOKEN: ${{ secrets.SPONSORKIT_AFDIAN_TOKEN }}
 
