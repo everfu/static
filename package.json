@@ -3,6 +3,9 @@
     "build": "sh build.sh"
   },
   "devDependencies": {
-    "sponsorkit": "^0.9.3"
+    "sponsorkit": "^0.14.4"
+  },
+  "dependencies": {
+    "@types/node": "^20.12.12"
   }
 }
