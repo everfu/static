@@ -103,6 +103,14 @@ export default defineConfig({
 
   renders: [
     {
+      name: 'sponsors',
+      width: 800
+    },
+    {
+      name: 'sponsors.wide',
+      width: 1800
+    },
+    {
       name: 'sponsors.part1',
       width: 800,
       filter: (sponsor) => sponsor.monthlyDollars >= 9.9
