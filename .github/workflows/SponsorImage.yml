@@ -38,4 +38,4 @@ jobs:
           message: "chore: update sponsors.svg [ci skip]"
           add: "sponsors.*"
         env:
-          GITHUB_TOKEN: ${{ secrets.SPONSORKIT_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
