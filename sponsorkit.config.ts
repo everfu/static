@@ -1,5 +1,6 @@
 import { BadgePreset, defineConfig, tierPresets } from "sponsorkit";
 import fs from "fs/promises";
+import { createHash } from "crypto";
 
 const past: BadgePreset = {
   avatar: {
@@ -56,24 +57,7 @@ export default defineConfig({
 
   sponsorsAutoMerge: true,
 
-  mergeSponsors: [
-    [
-      { login: "patak-dev", provider: "github" },
-      { login: "patak", provider: "opencollective" },
-    ],
-    [
-      { login: "serkodev", provider: "github" },
-      { login: "serko", provider: "opencollective" },
-    ],
-    [
-      { login: "WebWorkerTech", provider: "github" },
-      { login: "web-worker-podcast", provider: "opencollective" },
-    ],
-    [
-      { login: "kissu", provider: "github" },
-      { login: "kissu", provider: "opencollective" },
-    ],
-  ],
+  mergeSponsors: [],
 
   outputDir: ".",
   formats: ["svg", "png"],
@@ -82,35 +66,6 @@ export default defineConfig({
     {
       name: "sponsors",
       width: 800,
-    },
-    {
-      name: "sponsors.wide",
-      width: 1800,
-    },
-    {
-      name: "sponsors.part1",
-      width: 800,
-      filter: (sponsor) => sponsor.monthlyDollars >= 9.9,
-    },
-    {
-      name: "sponsors.part2",
-      width: 800,
-      filter: (sponsor) =>
-        sponsor.monthlyDollars < 9.9 && sponsor.monthlyDollars >= 0,
-    },
-    {
-      name: "sponsors.past",
-      width: 800,
-      filter: (sponsor) => sponsor.monthlyDollars < 0,
-    },
-    {
-      name: "sponsors.circles",
-      width: 1000,
-      includePastSponsors: true,
-      renderer: "circles",
-      circles: {
-        radiusPast: 3,
-      },
     },
   ],
   async onSponsorsReady(sponsors) {
@@ -121,10 +76,11 @@ export default defineConfig({
           .filter((i) => i.privacyLevel !== "PRIVATE")
           .map((i) => {
             return {
+              provider: i.provider,
               name: i.sponsor.name,
               login: i.sponsor.login,
               avatar: i.sponsor.avatarUrl,
-              amount: i.monthlyDollars,
+              amount: i.raw.all_sum_amount,
               link: i.sponsor.linkUrl || i.sponsor.websiteUrl,
               org: i.sponsor.type === "Organization",
             };
