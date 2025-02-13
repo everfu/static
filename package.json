@@ -3,5 +3,9 @@
   "packageManager": "pnpm@9.15.5",
   "scripts": {
     "build": "sponsorkit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.12",
+    "sponsorkit": "^0.16.2"
   }
 }
